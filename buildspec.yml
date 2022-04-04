@@ -13,8 +13,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...
+      - echo Logging into Dockerhub...
       - docker login -u akrlrng -p 0a425f8c-74d6-4f47-8a5e-09dcc9eb7dc9
+      - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
